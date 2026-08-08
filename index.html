@@ -3,365 +3,1628 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Imani! ❤️</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Quicksand', sans-serif; }
-        
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-            50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
-            100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-        }
-        .floating-heart { animation: float 4s ease-in-out infinite; }
+    <title>Happy Birthday Imani ❤️</title>
 
-        /* Falling flower petals animation */
-        @keyframes fall {
-            0% { transform: translateY(-10vh) translateX(0px) rotate(0deg); opacity: 0.9; }
-            50% { transform: translateY(50vh) translateX(30px) rotate(180deg); opacity: 0.7; }
-            100% { transform: translateY(110vh) translateX(-20px) rotate(360deg); opacity: 0; }
+    <script src="[https://cdn.tailwindcss.com"></script]https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .romantic-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ================================
+           BACKGROUND HEARTS
+        ================================= */
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(-8deg);
+                opacity: 0.25;
+            }
+
+            50% {
+                transform: translateY(-22px) rotate(8deg);
+                opacity: 0.65;
+            }
+
+            100% {
+                transform: translateY(0) rotate(-8deg);
+                opacity: 0.25;
+            }
+        }
+
+        .floating-heart {
+            animation: floatHeart 4s ease-in-out infinite;
+        }
+
+        /* ================================
+           FALLING PETALS
+        ================================= */
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(50vh) translateX(30px) rotate(180deg);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateY(110vh) translateX(-20px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         .falling-petal {
             position: absolute;
             top: -10vh;
-            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            background: linear-gradient(135deg, #ff758c, #ffb3c6);
             border-radius: 150% 0 150% 0;
             animation: fall linear infinite;
             z-index: 1;
             pointer-events: none;
         }
 
-        /* Flame flicker effect */
-        @keyframes flicker {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(0.95) translateY(2px); opacity: 0.85; }
+        /* ================================
+           PAGE TRANSITION
+        ================================= */
+
+        .page-card {
+            animation: pageAppear 0.8s ease forwards;
         }
-        .candle-flame { animation: flicker 0.6s infinite; }
+
+        @keyframes pageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(18px) scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ================================
+           FLOWER BOUQUET
+        ================================= */
+
+        .bouquet-area {
+            position: relative;
+            width: 240px;
+            height: 285px;
+            margin: auto;
+        }
+
+        .flower {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            animation: flowerFloat 4s ease-in-out infinite;
+        }
+
+        .flower-one {
+            left: 25px;
+            top: 25px;
+            transform: rotate(-12deg);
+        }
+
+        .flower-two {
+            left: 82px;
+            top: 0;
+            transform: scale(1.12);
+            animation-delay: 0.5s;
+        }
+
+        .flower-three {
+            right: 18px;
+            top: 30px;
+            transform: rotate(12deg);
+            animation-delay: 1s;
+        }
+
+        .flower-four {
+            left: 75px;
+            top: 65px;
+            transform: scale(0.72);
+            animation-delay: 1.5s;
+        }
+
+        @keyframes flowerFloat {
+            0%, 100% {
+                margin-top: 0;
+            }
+
+            50% {
+                margin-top: -7px;
+            }
+        }
+
+        .petal {
+            position: absolute;
+            width: 31px;
+            height: 42px;
+            left: 22px;
+            top: 13px;
+            border-radius: 60% 40% 65% 35%;
+            transform-origin: 50% 100%;
+        }
+
+        .petal.p1 {
+            transform: rotate(0deg) translateY(-12px);
+        }
+
+        .petal.p2 {
+            transform: rotate(72deg) translateY(-12px);
+        }
+
+        .petal.p3 {
+            transform: rotate(144deg) translateY(-12px);
+        }
+
+        .petal.p4 {
+            transform: rotate(216deg) translateY(-12px);
+        }
+
+        .petal.p5 {
+            transform: rotate(288deg) translateY(-12px);
+        }
+
+        .pink-flower .petal {
+            background: linear-gradient(135deg, #ff8fab, #f76f9d);
+            box-shadow: inset -3px -3px 6px rgba(180, 40, 90, 0.12);
+        }
+
+        .rose-flower .petal {
+            background: linear-gradient(135deg, #e95d83, #c83f68);
+            box-shadow: inset -3px -3px 6px rgba(100, 20, 50, 0.15);
+        }
+
+        .peach-flower .petal {
+            background: linear-gradient(135deg, #ffb199, #ff8f8f);
+        }
+
+        .white-flower .petal {
+            background: linear-gradient(135deg, #fff7fa, #ffdce7);
+            border: 1px solid #f7b8ca;
+        }
+
+        .flower-center {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            left: 27px;
+            top: 27px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd66b 25%, #f5a623 27%, #e98a20 70%);
+            z-index: 5;
+        }
+
+        .stem {
+            position: absolute;
+            width: 6px;
+            height: 125px;
+            background: linear-gradient(to right, #4e9b62, #77b87b);
+            border-radius: 10px;
+            left: 118px;
+            top: 90px;
+            transform: rotate(2deg);
+        }
+
+        .stem-left {
+            transform: rotate(-18deg);
+            left: 93px;
+        }
+
+        .stem-right {
+            transform: rotate(20deg);
+            left: 145px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 43px;
+            height: 20px;
+            background: linear-gradient(135deg, #78b985, #438a59);
+            border-radius: 100% 0 100% 0;
+        }
+
+        .leaf-one {
+            left: 80px;
+            top: 155px;
+            transform: rotate(25deg);
+        }
+
+        .leaf-two {
+            left: 139px;
+            top: 175px;
+            transform: rotate(155deg);
+        }
+
+        .leaf-three {
+            left: 98px;
+            top: 200px;
+            transform: rotate(-15deg);
+        }
+
+        .wrapping {
+            position: absolute;
+            bottom: 0;
+            left: 45px;
+            width: 150px;
+            height: 105px;
+            background: linear-gradient(135deg, #f8b4c8, #e984a3);
+            clip-path: polygon(10% 0, 90% 0, 76% 100%, 24% 100%);
+            box-shadow: 0 12px 25px rgba(190, 80, 110, 0.2);
+        }
+
+        .wrapping-inner {
+            position: absolute;
+            bottom: 0;
+            left: 64px;
+            width: 112px;
+            height: 100px;
+            background: linear-gradient(135deg, #fff1f5, #f7c3d3);
+            clip-path: polygon(10% 0, 90% 0, 75% 100%, 25% 100%);
+            opacity: 0.7;
+        }
+
+        .ribbon {
+            position: absolute;
+            bottom: 58px;
+            left: 105px;
+            width: 80px;
+            height: 12px;
+            background: #fff5f8;
+            border-radius: 20px;
+            transform: rotate(-8deg);
+            z-index: 8;
+        }
+
+        .ribbon-knot {
+            position: absolute;
+            bottom: 46px;
+            left: 130px;
+            width: 32px;
+            height: 28px;
+            background: #fff5f8;
+            border-radius: 50%;
+            z-index: 9;
+        }
+
+        .ribbon-knot::before,
+        .ribbon-knot::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 24px;
+            background: #ffe2eb;
+            border-radius: 70% 30% 70% 30%;
+            top: 2px;
+        }
+
+        .ribbon-knot::before {
+            right: 20px;
+            transform: rotate(25deg);
+        }
+
+        .ribbon-knot::after {
+            left: 20px;
+            transform: rotate(-25deg);
+        }
+
+        /* ================================
+           FLOWER CARD GLOW
+        ================================= */
+
+        .flower-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .flower-card::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255, 150, 180, 0.15);
+            filter: blur(35px);
+            top: -80px;
+            right: -80px;
+        }
+
+        /* ================================
+           CAKE
+        ================================= */
+
+        .cake-scene {
+            position: relative;
+            width: 270px;
+            height: 245px;
+            margin: 15px auto 5px;
+        }
+
+        .cake-shadow {
+            position: absolute;
+            bottom: 16px;
+            left: 25px;
+            width: 220px;
+            height: 22px;
+            background: rgba(170, 80, 100, 0.15);
+            border-radius: 50%;
+            filter: blur(7px);
+        }
+
+        .cake-bottom {
+            position: absolute;
+            bottom: 30px;
+            left: 28px;
+            width: 215px;
+            height: 78px;
+            background: linear-gradient(to bottom, #d986a0, #bd607d);
+            border-radius: 14px 14px 22px 22px;
+            border: 3px solid #a94c69;
+            box-shadow: 0 8px 15px rgba(150, 60, 90, 0.18);
+        }
+
+        .cake-bottom::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -2px;
+            width: 212px;
+            height: 25px;
+            background: #fff0f5;
+            border-radius: 50%;
+            border: 3px solid #eab5c5;
+        }
+
+        .cake-top {
+            position: absolute;
+            bottom: 86px;
+            left: 43px;
+            width: 185px;
+            height: 70px;
+            background: linear-gradient(to bottom, #f7c2d2, #e997b1);
+            border-radius: 13px 13px 18px 18px;
+            border: 3px solid #d77898;
+        }
+
+        .cake-top::after {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: -2px;
+            width: 180px;
+            height: 27px;
+            background: #fff8fb;
+            border-radius: 50%;
+            border: 3px solid #edc3d0;
+        }
+
+        .frosting-drip {
+            position: absolute;
+            top: 5px;
+            left: 12px;
+            width: 160px;
+            height: 40px;
+            z-index: 4;
+        }
+
+        .drip {
+            position: absolute;
+            width: 27px;
+            height: 38px;
+            background: #fff8fb;
+            border-radius: 0 0 18px 18px;
+        }
+
+        .drip:nth-child(1) {
+            left: 5px;
+        }
+
+        .drip:nth-child(2) {
+            left: 48px;
+            height: 48px;
+        }
+
+        .drip:nth-child(3) {
+            left: 91px;
+            height: 33px;
+        }
+
+        .drip:nth-child(4) {
+            left: 134px;
+            height: 44px;
+        }
+
+        .sprinkles {
+            position: absolute;
+            z-index: 8;
+            left: 67px;
+            bottom: 104px;
+            width: 140px;
+            height: 50px;
+        }
+
+        .sprinkle {
+            position: absolute;
+            width: 12px;
+            height: 4px;
+            border-radius: 5px;
+            background: #e95d83;
+        }
+
+        .sprinkle:nth-child(1) {
+            left: 10px;
+            top: 18px;
+            transform: rotate(25deg);
+        }
+
+        .sprinkle:nth-child(2) {
+            left: 42px;
+            top: 8px;
+            transform: rotate(-20deg);
+        }
+
+        .sprinkle:nth-child(3) {
+            left: 73px;
+            top: 20px;
+            transform: rotate(15deg);
+        }
+
+        .sprinkle:nth-child(4) {
+            left: 105px;
+            top: 10px;
+            transform: rotate(-30deg);
+        }
+
+        .sprinkle:nth-child(5) {
+            left: 125px;
+            top: 30px;
+            transform: rotate(22deg);
+        }
+
+        .candle {
+            position: absolute;
+            bottom: 145px;
+            width: 12px;
+            height: 55px;
+            border-radius: 6px 6px 3px 3px;
+            background: repeating-linear-gradient(
+                135deg,
+                #fff,
+                #fff 7px,
+                #ef7194 7px,
+                #ef7194 13px
+            );
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(100, 30, 50, 0.15);
+        }
+
+        .candle-one {
+            left: 84px;
+        }
+
+        .candle-two {
+            left: 128px;
+            height: 65px;
+        }
+
+        .candle-three {
+            left: 172px;
+        }
+
+        .flame {
+            position: absolute;
+            width: 17px;
+            height: 25px;
+            top: -25px;
+            left: -2px;
+            background: radial-gradient(circle at 50% 65%, #fff5a5 10%, #ffc04d 40%, #ff7a70 75%);
+            border-radius: 55% 45% 55% 45%;
+            transform: rotate(2deg);
+            filter: drop-shadow(0 0 7px rgba(255, 167, 76, 0.7));
+            animation: flicker 0.7s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                transform: scale(1) rotate(2deg);
+            }
+
+            50% {
+                transform: scale(0.9) rotate(-3deg);
+            }
+        }
+
+        .cake-writing {
+            position: absolute;
+            z-index: 12;
+            bottom: 48px;
+            left: 70px;
+            width: 140px;
+            text-align: center;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* ================================
+           FINALE
+        ================================= */
+
+        .final-heart {
+            position: relative;
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 25px;
+            animation: heartBeat 1.7s ease-in-out infinite;
+        }
+
+        .final-heart::before,
+        .final-heart::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            width: 58px;
+            height: 90px;
+            border-radius: 58px 58px 0 0;
+            background: linear-gradient(135deg, #ff7b9c, #e84873);
+        }
+
+        .final-heart::before {
+            left: 47px;
+            transform: rotate(45deg);
+            transform-origin: 0 100%;
+        }
+
+        .final-heart::after {
+            left: 0;
+            transform: rotate(-45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% {
+                transform: scale(0.95);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .final-sparkle {
+            position: absolute;
+            font-size: 20px;
+            color: #e85d84;
+            animation: sparkle 2s infinite;
+        }
+
+        .sparkle-one {
+            top: 15px;
+            left: 15%;
+        }
+
+        .sparkle-two {
+            top: 80px;
+            right: 15%;
+            animation-delay: 0.7s;
+        }
+
+        .sparkle-three {
+            bottom: 60px;
+            left: 22%;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 640px) {
+            .flower-note {
+                font-size: 11px;
+            }
+
+            .bouquet-area {
+                transform: scale(0.9);
+                margin-top: -8px;
+                margin-bottom: -15px;
+            }
+
+            .cake-scene {
+                transform: scale(0.9);
+                margin-top: 0;
+                margin-bottom: -10px;
+            }
+        }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-pink-100 via-rose-50 to-pink-200 min-h-screen flex flex-col items-center justify-center text-gray-700 relative overflow-hidden p-4">
 
-    <!-- Falling Flower Petals Background Animation -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden" id="petal-container">
-        <!-- Generated dynamically via script for continuous flow -->
-    </div>
+    <!-- Falling petals -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden" id="petal-container"></div>
 
-    <!-- PAGE 1: Welcome Screen -->
-    <div id="page-welcome" class="text-center z-10 max-w-md w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200">
-        <div class="text-6xl mb-4 animate-bounce">💐</div>
-        <h1 class="text-3xl font-bold text-pink-600 mb-2">Hey Baby ❤️</h1>
-        <p class="text-lg font-semibold text-gray-600 mb-6">I made a special surprise just for you</p>
-        <p class="text-sm text-gray-500 mb-8">do you want to see your gift?</p>
-        
+    <!-- ================================
+         PAGE 1
+    ================================= -->
+
+    <div id="page-welcome"
+         class="page-card text-center z-10 max-w-md w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200">
+
+        <div class="text-6xl mb-4">💐</div>
+
+        <h1 class="text-3xl font-bold text-pink-600 mb-2">
+            Hey Baby ❤️
+        </h1>
+
+        <p class="text-lg font-semibold text-gray-600 mb-6">
+            I made a special surprise just for you
+        </p>
+
+        <p class="text-sm text-gray-500 mb-8">
+            do you want to see your gift?
+        </p>
+
         <div class="flex justify-center items-center gap-4 relative h-16">
-            <button onclick="goToDashboard()" class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+
+            <button
+                onclick="goToDashboard()"
+                class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
                 YES BABY!
             </button>
-            <button id="no-btn" onmouseover="moveNoButton()" onclick="noClicked()" class="bg-gray-200 hover:bg-gray-300 text-gray-600 font-bold py-3 px-6 rounded-full transition absolute right-0 shadow">
+
+            <button
+                id="no-btn"
+                onmouseover="moveNoButton()"
+                onclick="noClicked()"
+                class="bg-gray-200 hover:bg-gray-300 text-gray-600 font-bold py-3 px-6 rounded-full transition absolute right-0 shadow">
                 NO THANK YOU
             </button>
+
         </div>
     </div>
 
-    <!-- ERROR POPUP FOR NO BUTTON -->
-    <div id="error-modal" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <!-- ================================
+         NO BUTTON POPUP
+    ================================= -->
+
+    <div id="error-modal"
+         class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+
         <div class="bg-white rounded-3xl p-6 text-center max-w-xs shadow-2xl border border-pink-100">
-            <div class="text-4xl mb-2">🥰</div>
-            <h2 class="text-xl font-bold text-pink-500 mb-2">I promise you'll love it!</h2>
-            <button onclick="closeError()" class="bg-rose-400 text-white px-6 py-2 rounded-full font-bold mt-4 shadow hover:bg-rose-500 transition">Try Again</button>
+
+            <div class="text-4xl mb-2">♡</div>
+
+            <h2 class="text-xl font-bold text-pink-500 mb-2">
+                I promise you'll love it!
+            </h2>
+
+            <button
+                onclick="closeError()"
+                class="bg-rose-400 text-white px-6 py-2 rounded-full font-bold mt-4 shadow hover:bg-rose-500 transition">
+                Try Again
+            </button>
+
         </div>
     </div>
 
-    <!-- PAGE 2: Dashboard / Gifts Menu -->
-    <div id="page-dashboard" class="hidden text-center z-10 max-w-lg w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200">
+    <!-- ================================
+         PAGE 2 DASHBOARD
+    ================================= -->
+
+    <div id="page-dashboard"
+         class="hidden page-card text-center z-10 max-w-lg w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200">
+
         <div class="flex items-center justify-center gap-2 mb-2">
-            <span class="text-3xl">🌹</span>
-            <h2 class="text-2xl font-bold text-pink-600">Yay, you said yes!</h2>
+
+            <span class="text-3xl">♡</span>
+
+            <h2 class="text-2xl font-bold text-pink-600">
+                Yay, you said yes!
+            </h2>
+
         </div>
-        <p class="text-sm text-gray-500 mb-6">I made all these for you, my baby</p>
+
+        <p class="text-sm text-gray-500 mb-6">
+            I made all these for you, my baby
+        </p>
 
         <div class="grid grid-cols-2 gap-4 mb-6">
-            <button onclick="openModal('modal-flowers')" class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
-                <span class="text-2xl mb-1">🌷</span>
-                Gift 1 <br><span class="text-xs font-normal text-gray-600">Virtual Flowers</span>
+
+            <!-- Gift 1 -->
+            <button
+                onclick="openModal('modal-flowers')"
+                class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
+
+                <span class="text-3xl mb-2">✿</span>
+
+                Gift 1
+                <br>
+
+                <span class="text-xs font-normal text-gray-600">
+                    Flowers For You
+                </span>
+
             </button>
-            <button onclick="openModal('modal-cake')" class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
-                <span class="text-2xl mb-1">🎂</span>
-                Gift 2 <br><span class="text-xs font-normal text-gray-600">Blow The Candles</span>
+
+            <!-- Gift 2 -->
+            <button
+                onclick="openModal('modal-cake')"
+                class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
+
+                <span class="text-3xl mb-2">♡</span>
+
+                Gift 2
+                <br>
+
+                <span class="text-xs font-normal text-gray-600">
+                    Birthday Cake
+                </span>
+
             </button>
-            <button onclick="openModal('modal-letter')" class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
-                <span class="text-2xl mb-1">💌</span>
-                Gift 3 <br><span class="text-xs font-normal text-gray-600">Letter For You</span>
+
+            <!-- Gift 3 -->
+            <button
+                onclick="openModal('modal-letter')"
+                class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center">
+
+                <span class="text-3xl mb-2">♡</span>
+
+                Gift 3
+                <br>
+
+                <span class="text-xs font-normal text-gray-600">
+                    Letter For You
+                </span>
+
             </button>
-            <a href="https://open.spotify.com/playlist/49RUTicTfd0rCnhWHZijDa?si=45d67e29b0ec4c93&pt=68599438b27c11777e886ac901244e7e" target="_blank" class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center justify-center">
-                <span class="text-2xl mb-1">🎶</span>
-                Gift 4 <br><span class="text-xs font-normal text-gray-600">Our Playlist</span>
+
+            <!-- Gift 4 -->
+            <a
+                href="https://open.spotify.com/playlist/49RUTicTfd0rCnhWHZijDa?si=45d67e29b0ec4c93&pt=68599438b27c11777e886ac901244e7e"
+                target="_blank"
+                class="bg-gradient-to-br from-pink-50 to-rose-100 hover:from-pink-100 hover:to-rose-200 text-pink-700 font-bold p-6 rounded-2xl shadow-md transition transform hover:scale-105 border border-pink-200 flex flex-col items-center justify-center">
+
+                <span class="text-3xl mb-2">♪</span>
+
+                Gift 4
+                <br>
+
+                <span class="text-xs font-normal text-gray-600">
+                    Our Playlist
+                </span>
+
             </a>
+
         </div>
 
-        <button onclick="showFinalScreen()" class="text-xs text-pink-500 hover:text-pink-700 underline font-semibold">
+        <button
+            onclick="showFinalScreen()"
+            class="text-xs text-pink-500 hover:text-pink-700 underline font-semibold">
+
             Finished looking? Click here for a final message ➡️
+
         </button>
+
     </div>
 
-    <!-- MODAL 1: VIRTUAL FLOWERS -->
-    <div id="modal-flowers" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-        <div class="bg-white/95 rounded-3xl p-6 max-w-4xl w-full shadow-2xl max-h-[90vh] flex flex-col border border-pink-200 relative">
-            <h2 class="text-2xl font-bold text-pink-500 text-center mb-4 tracking-wide">Virtual Flowers</h2>
-            
+    <!-- ================================
+         GIFT 1 — FLOWERS
+    ================================= -->
+
+    <div id="modal-flowers"
+         class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+
+        <div class="flower-card bg-white/95 rounded-3xl p-6 max-w-4xl w-full shadow-2xl max-h-[90vh] flex flex-col border border-pink-200 relative">
+
+            <h2 class="romantic-font text-3xl font-semibold italic text-pink-500 text-center mb-1">
+                Flowers For You
+            </h2>
+
+            <p class="text-xs text-gray-500 text-center mb-4">
+                Ten little reminders of why you are so special to me.
+            </p>
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center overflow-y-auto p-2 flex-grow">
-                <!-- Left Notes -->
-                <div class="space-y-3 text-xs font-medium text-gray-700">
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">No matter what’s happening around me, somehow you make everything feel a little less scary.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">Through every mood, every good day and bad day, you’ll always be my person.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">You notice things about me that I don’t even have to explain.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">Even when I’m being difficult, overthinking, or just being me, you still choose to understand me.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">You have this way of making me feel wanted, appreciated and cared for without even trying.</div>
-                </div>
 
-                <!-- Center Bouquet Illustration Block -->
-                <div class="bg-gradient-to-b from-pink-50 to-rose-100 border-2 border-pink-300 rounded-3xl p-6 text-center flex flex-col items-center justify-center shadow-inner relative overflow-hidden">
-                    <div class="w-40 h-48 bg-white/80 rounded-2xl border border-pink-200 shadow-md flex flex-col items-center justify-center relative p-3 mb-3">
-                        <div class="absolute top-2 right-2 text-xs">✨</div>
-                        <div class="flex gap-2 text-4xl mb-1 items-end">
-                            <span class="transform -rotate-12">🌷</span>
-                            <span class="transform scale-125 z-10">🌹</span>
-                            <span class="transform rotate-12">🌻</span>
-                        </div>
-                        <div class="w-20 h-14 bg-rose-300 rounded-b-full rounded-t-lg relative flex items-center justify-center shadow-sm mt-1 border border-rose-400">
-                            <div class="absolute -top-3 w-6 h-6 bg-red-400 rounded-full border border-white"></div>
-                            <span class="text-white text-[10px] font-bold tracking-tighter">BOW</span>
-                        </div>
+                <!-- LEFT NOTES -->
+
+                <div class="space-y-3 text-xs font-medium text-gray-700">
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        No matter what’s happening around me, somehow you make everything feel a little less scary.
                     </div>
-                    <div class="text-pink-600 font-bold text-xs tracking-widest uppercase">FLOWERS FOR YOU!</div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        Through every mood, every good day and bad day, you’ll always be my person.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        You notice things about me that I don’t even have to explain.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        Even when I’m being difficult, overthinking, or just being me, you still choose to understand me.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        You have this way of making me feel wanted, appreciated and cared for without even trying.
+                    </div>
+
                 </div>
 
-                <!-- Right Notes -->
-                <div class="space-y-3 text-xs font-medium text-gray-700">
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">The random messages, the little jokes, the way you talk, the things you probably don’t even realise I’ve fallen in love with.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">I can be completely myself with you. I never feel like I have to pretend to be someone else.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">You’ve shown me that love isn’t just about the easy moments. It’s about choosing each other again and again.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">Somehow, even an ordinary day feels better when I get to have you in it.</div>
-                    <div class="bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">Out of everyone in this world, I’m so grateful that somehow I got you. And if I had to choose all over again, I’d still choose you.</div>
+                <!-- REAL CSS BOUQUET -->
+
+                <div class="bg-gradient-to-b from-pink-50 to-rose-100 border-2 border-pink-200 rounded-3xl p-4 text-center flex flex-col items-center justify-center shadow-inner relative overflow-hidden min-h-[350px]">
+
+                    <div class="bouquet-area">
+
+                        <!-- Flowers -->
+
+                        <div class="flower flower-one pink-flower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+
+                            <span class="flower-center"></span>
+
+                        </div>
+
+                        <div class="flower flower-two rose-flower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+
+                            <span class="flower-center"></span>
+
+                        </div>
+
+                        <div class="flower flower-three peach-flower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+
+                            <span class="flower-center"></span>
+
+                        </div>
+
+                        <div class="flower flower-four white-flower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+
+                            <span class="flower-center"></span>
+
+                        </div>
+
+                        <!-- Stems -->
+
+                        <div class="stem"></div>
+                        <div class="stem stem-left"></div>
+                        <div class="stem stem-right"></div>
+
+                        <!-- Leaves -->
+
+                        <div class="leaf leaf-one"></div>
+                        <div class="leaf leaf-two"></div>
+                        <div class="leaf leaf-three"></div>
+
+                        <!-- Wrapping -->
+
+                        <div class="wrapping"></div>
+                        <div class="wrapping-inner"></div>
+
+                        <div class="ribbon"></div>
+                        <div class="ribbon-knot"></div>
+
+                    </div>
+
+                    <div class="text-pink-600 font-bold text-xs tracking-[0.2em] uppercase mt-2">
+                        made especially for you
+                    </div>
+
+                    <div class="text-pink-400 text-[10px] mt-1 italic romantic-font">
+                        because you deserve something beautiful
+                    </div>
+
                 </div>
+
+                <!-- RIGHT NOTES -->
+
+                <div class="space-y-3 text-xs font-medium text-gray-700">
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        The random messages, the little jokes, the way you talk, the things you probably don’t even realise I’ve fallen in love with.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        I can be completely myself with you. I never feel like I have to pretend to be someone else.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        You’ve shown me that love isn’t just about the easy moments. It’s about choosing each other again and again.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        Somehow, even an ordinary day feels better when I get to have you in it.
+                    </div>
+
+                    <div class="flower-note bg-pink-50 p-3 rounded-2xl border border-pink-200 shadow-sm">
+                        Out of everyone in this world, I’m so grateful that somehow I got you. And if I had to choose all over again, I’d still choose you.
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="text-center mt-4">
-                <button onclick="closeModal('modal-flowers')" class="bg-pink-400 hover:bg-pink-500 text-white px-8 py-2 rounded-full font-bold shadow">Return</button>
+
+                <button
+                    onclick="closeModal('modal-flowers')"
+                    class="bg-pink-400 hover:bg-pink-500 text-white px-8 py-2 rounded-full font-bold shadow">
+                    Return
+                </button>
+
             </div>
+
         </div>
     </div>
 
-    <!-- MODAL 2: VIRTUAL CAKE & MIC BLOW OUT (Compact Cake Design) -->
-    <div id="modal-cake" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <!-- ================================
+         GIFT 2 — CAKE
+    ================================= -->
+
+    <div id="modal-cake"
+         class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+
         <div class="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl text-center border border-pink-100 relative">
-            <h3 class="text-lg font-bold text-pink-600 mb-1">Blow Out The Candles 🎂</h3>
-            <p id="cake-instructions" class="text-xs text-gray-500 mb-3">Click below to allow mic access, then blow into your mic!</p>
-            
-            <!-- Compact Cake Graphic -->
-            <div class="relative w-40 h-36 mx-auto bg-amber-900 rounded-t-full rounded-b-2xl shadow-inner flex flex-col items-center justify-end pb-3 border-4 border-pink-200 mb-5 mt-8">
-                <!-- Frosting drip layer -->
-                <div class="absolute top-0 w-full h-10 bg-pink-100 rounded-t-full border-b-2 border-pink-200"></div>
-                
-                <!-- Smaller Candles -->
-                <div class="absolute -top-7 flex justify-center gap-5 w-full">
-                    <div class="w-2.5 h-9 bg-red-500 rounded relative flex justify-center">
-                        <div id="flame-1" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
-                    <div class="w-2.5 h-9 bg-red-500 rounded relative flex justify-center">
-                        <div id="flame-2" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
-                    <div class="w-2.5 h-9 bg-red-500 rounded relative flex justify-center">
-                        <div id="flame-3" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
+
+            <h3 class="romantic-font text-2xl italic font-semibold text-pink-600 mb-1">
+                A little birthday cake
+            </h3>
+
+            <p id="cake-instructions"
+               class="text-xs text-gray-500 mb-1">
+                Click below to allow mic access, then blow out the candles.
+            </p>
+
+            <!-- CAKE -->
+
+            <div class="cake-scene">
+
+                <div class="cake-shadow"></div>
+
+                <div class="cake-bottom"></div>
+
+                <div class="cake-top"></div>
+
+                <div class="frosting-drip">
+
+                    <div class="drip"></div>
+                    <div class="drip"></div>
+                    <div class="drip"></div>
+                    <div class="drip"></div>
+
                 </div>
-                <span class="text-white font-bold text-[10px] z-10">HAPPY BIRTHDAY IMANI ❤️</span>
+
+                <div class="sprinkles">
+
+                    <div class="sprinkle"></div>
+                    <div class="sprinkle"></div>
+                    <div class="sprinkle"></div>
+                    <div class="sprinkle"></div>
+                    <div class="sprinkle"></div>
+
+                </div>
+
+                <!-- Candles -->
+
+                <div class="candle candle-one">
+
+                    <div id="flame-1" class="flame"></div>
+
+                </div>
+
+                <div class="candle candle-two">
+
+                    <div id="flame-2" class="flame"></div>
+
+                </div>
+
+                <div class="candle candle-three">
+
+                    <div id="flame-3" class="flame"></div>
+
+                </div>
+
+                <div class="cake-writing">
+                    HAPPY BIRTHDAY IMANI
+                </div>
+
             </div>
 
-            <!-- Success message updated text -->
-            <div id="cake-message" class="hidden mb-4 p-3 bg-pink-50 rounded-2xl border border-pink-200">
-                <p class="text-xs font-bold text-pink-600">I love you baby, you mean the absolute world to me ✨💖</p>
+            <!-- SUCCESS MESSAGE -->
+
+            <div id="cake-message"
+                 class="hidden mb-4 p-3 bg-pink-50 rounded-2xl border border-pink-200">
+
+                <p class="text-xs font-bold text-pink-600">
+                    Make a wish, birthday girl. ✨
+                </p>
+
+                <p class="text-[11px] text-gray-500 mt-1">
+                    I hope this year brings you every beautiful thing you deserve.
+                </p>
+
             </div>
 
             <div class="flex flex-col gap-2">
-                <button onclick="startMic()" id="mic-btn" class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-6 rounded-full shadow transition text-xs">
-                    Allow Access to Mic
+
+                <button
+                    onclick="startMic()"
+                    id="mic-btn"
+                    class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-6 rounded-full shadow transition text-xs">
+                    Blow Out The Candles
                 </button>
-                <button onclick="closeModal('modal-cake')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-6 rounded-full transition text-xs">
+
+                <button
+                    onclick="closeModal('modal-cake')"
+                    class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-6 rounded-full transition text-xs">
                     Return
                 </button>
+
             </div>
+
         </div>
     </div>
 
-    <!-- MODAL 3: FULL LETTER FOR YOU -->
-    <div id="modal-letter" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <!-- ================================
+         GIFT 3 — LETTER
+    ================================= -->
+
+    <div id="modal-letter"
+         class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+
         <div class="bg-gradient-to-b from-pink-50 via-white to-pink-50 rounded-3xl p-6 max-w-lg w-full shadow-2xl max-h-[85vh] flex flex-col border-2 border-pink-200 relative">
+
             <div class="text-center mb-2">
-                <span class="text-2xl">💌✨</span>
-                <h3 class="text-xl font-bold text-pink-600">Message For You</h3>
+
+                <span class="text-2xl">♡</span>
+
+                <h3 class="romantic-font text-2xl italic font-semibold text-pink-600">
+                    A Letter For You
+                </h3>
+
             </div>
-            
+
             <div class="bg-white/90 rounded-2xl p-4 shadow-inner border border-pink-100 overflow-y-auto pr-3 mb-4 flex-grow space-y-3 text-xs text-gray-700 leading-relaxed">
-                <p class="font-bold text-gray-800 text-sm">Happy birthday Imani ❤️</p>
-                <p>I love you more than words could ever express. I really wish I could be there with you today, holding you in my arms, giving you the biggest hug, and telling you face to face just how much you mean to me. I wish I could see your smile in person, see your reactions, and make this day as special as you deserve.</p>
-                <p>I know you don’t really like your birthday, baby. I know sometimes it brings sadness, disappointment, and feelings that aren’t always easy to explain. I know there have been times where people have let you down, and I’m sorry you’ve had to experience that. If I could take away every bad feeling you’ve ever had, I would. All I want is to see you happy. I hate seeing you upset, sad, or disappointed, especially when it’s my girl feeling that way and I can’t immediately be there to fix it. But even if I can’t be beside you today, I hope you feel my love and know how special you truly are.</p>
-                <p>I know the distance between us hasn’t always been easy, baby. I know there have been so many times where we wanted to see each other and things didn’t work out, and I know it can be disappointing when we have to wait longer than we want to. But I want you to know that there has never been a day where the distance made me love you any less. If anything, it has shown me how much you mean to me. Even when I can’t physically be there beside you, I will always try my best to show up for you, put in the effort, and remind you that my love for you is still here. I know the waiting isn’t always easy, but I truly believe that when we finally get that moment together, it will make it even more special because we waited, we stayed patient, and we never stopped choosing each other.</p>
-                <p>You mean everything to me, Imani. I care about every little thing that affects you, whether it’s something small, something huge, something that bothers you, or anything that involves you. Your feelings matter so much to me. Your happiness matters to me. I will always try my best to comfort you, support you, listen to you, and remind you that you are loved.</p>
-                <p>I love spending quality time with you, Zari. I love calling you for hours, even when we spend the whole day together and somehow still find things to talk about. I love playing Roblox with you, playing iMessage games with you, studying with you, laughing with you, and just having your company. I love being around you in every way I can. You and you alone. There is no one else I would rather spend my time with because being with you feels so natural and peaceful.</p>
-                <p>I can’t even explain how grateful I am to have you in my life. I’m so thankful and blessed to have someone who loves me and cares for me the same way I care for you. I’m grateful that I met you, that our paths crossed, and that you became such an important part of my life. Ever since I started talking to you, I’ve felt so much happiness. You brought so much joy into my life without even trying.</p>
-                <p>I love waking up and talking to you. I love falling asleep on the phone with you. I love hearing your voice and knowing there is someone out there who genuinely cares about me. Even when things aren’t easy, you’re someone I feel like I can always come back to. You make me feel safe, and you make me feel loved. You are worth every moment, every wait, and every effort. I would choose you over and over again.</p>
-                <p>You are so incredibly gorgeous, Imani. I genuinely don’t think you understand how beautiful I think you are. I love every little detail about you; your eyes, your smile, your face, your expressions, your voice, your laugh, and everything that makes you you. I could look at you for so long and still never get tired of seeing you.</p>
-                <p>I love your eyes and the way they light up when you’re happy or talking about something you love. I love your smile and how it instantly makes me smile too. I love your laugh and how addicted I am to hearing it. I love the way your face changes when you’re excited, joking, thinking, or just being yourself. I love watching you because even the smallest things you do make me smile.</p>
-                <p>I love everything about you, not just how you look. I love the way you carry yourself, the way you express yourself, and the way you make ordinary moments feel special. You are beautiful inside and out, and sometimes I genuinely find myself feeling so lucky that I get to see you, talk to you, and love you.</p>
-                <p>I’m so in love with you. I don’t just love you because you love me. I love you because you are you. I love your heart, your personality, your kindness, your flaws, your strengths, and everything that makes you Imani. I love the person you are when nobody is watching. I love the way you care, the way you think, and the way you love.</p>
-                <p>One of the biggest things I admire about you is your heart. The way you care for the people around you is one of the most beautiful things about you. I see how much you love and care for Zuri. Even when you’re tired, you’ll still get up and cook for her because that’s just the type of person you are. You naturally take care of the people you love, and that shows how big your heart is.</p>
-                <p>Even when you’re having a bad day, you still somehow find a way to make me smile. You still show up for me, comfort me, and make me feel loved even when you’re dealing with your own things. That means so much to me because it shows how selfless and caring you are.</p>
-                <p>I admire your strength so much too. Even when things upset you or when you’re frustrated, you still handle yourself with so much maturity. You still do what needs to be done, you still push through, and you still keep going even when things aren’t easy. Your determination, your confidence, and your ability to keep moving forward inspire me.</p>
-                <p>I love how talented you are. Your paintings are genuinely beautiful, and I love seeing the creativity and passion you put into them. Your cooking is amazing too, you’re on some Gordon Ramsay shit. Watching you create things and seeing how much effort you put into what you love makes me admire you even more.</p>
-                <p>Another thing I love so much about you is the effort you put into everything you do. You are someone who doesn’t just say you care, you show it through your actions. Whenever you think of something sweet or something that would make someone happy, you actually take the time to do it. You put your heart into the little things, and I notice that.</p>
-                <p>I still think about the little things you’ve made, like the “C” with the heart and the paper flowers. It may seem like something small, but to me it was one of the cutest and most meaningful things ever because it showed how much thought and love you put into it. The time you took, the effort you made, and the fact that you wanted to create something special means so much to me.</p>
-                <p>I really admire the way you can take a simple idea and turn it into something meaningful. Your creativity and thoughtfulness show through in everything you do, and you always find a way to make people feel special. It’s not just about what you create, it’s the love and care behind it that makes it truly beautiful.</p>
-                <p>I love how soft-spoken, patient, and gentle you are with me. You make me feel understood. You make me feel like my feelings matter. I love how peaceful you look when you sleep, with your eyes closed and hugging your teddy. Those little moments make me smile because they remind me how much I adore you.</p>
-                <p>I also want you to know how loved you make me feel, Imani. You have a way of making me feel valued, important, and appreciated. The way you listen to me, understand me, reassure me, and communicate with me makes me feel so safe being myself around you.</p>
-                <p>I love that I never have to question if you care about me because you show me through your actions, your words, and the way you treat me. You make me feel chosen. You make me feel appreciated. You make me feel like I’m someone worth loving.</p>
-                <p>Whenever I’m having a bad day, hearing your voice or talking to you makes things feel lighter. You bring me comfort and happiness without even trying. You’re someone I can laugh with, be vulnerable with, learn with, and just be myself with.</p>
-                <p>Thank you for loving me the way you do. Thank you for being patient with me, reassuring me, choosing me, and making me feel so loved. I hope I can make you feel even half as loved as you make me feel because you deserve that and so much more.</p>
-                <p>I want you to always remember how amazing you are. Your kindness, your patience, your determination, your softness, your strength, and your beautiful soul are just some of the reasons why I love you so much.</p>
-                <p class="font-bold text-gray-800">Happy birthday, my baby. I hope today reminds you of how special you are and how deeply loved you are, not just today, but every single day.</p>
-                <p class="font-bold text-pink-600">I love you so much ❤️</p>
+
+                <p class="font-bold text-gray-800 text-sm">
+                    Happy birthday Imani ❤️
+                </p>
+
+                <p>
+                    I love you more than words could ever express. I really wish I could be there with you today, holding you in my arms, giving you the biggest hug, and telling you face to face just how much you mean to me. I wish I could see your smile in person, see your reactions, and make this day as special as you deserve.
+                </p>
+
+                <p>
+                    I know you don’t really like your birthday, baby. I know sometimes it brings sadness, disappointment, and feelings that aren’t always easy to explain. I know there have been times where people have let you down, and I’m sorry you’ve had to experience that. If I could take away every bad feeling you’ve ever had, I would. All I want is to see you happy. I hate seeing you upset, sad, or disappointed, especially when it’s my girl feeling that way and I can’t immediately be there to fix it. But even if I can’t be beside you today, I hope you feel my love and know how special you truly are.
+                </p>
+
+                <p>
+                    I know the distance between us hasn’t always been easy, baby. I know there have been so many times where we wanted to see each other and things didn’t work out, and I know it can be disappointing when we have to wait longer than we want to. But I want you to know that there has never been a day where the distance made me love you any less. If anything, it has shown me how much you mean to me. Even when I can’t physically be there beside you, I will always try my best to show up for you, put in the effort, and remind you that my love for you is still here. I know the waiting isn’t always easy, but I truly believe that when we finally get that moment together, it will make it even more special because we waited, we stayed patient, and we never stopped choosing each other.
+                </p>
+
+                <p>
+                    You mean everything to me, Imani. I care about every little thing that affects you, whether it’s something small, something huge, something that bothers you, or anything that involves you. Your feelings matter so much to me. Your happiness matters to me. I will always try my best to comfort you, support you, listen to you, and remind you that you are loved.
+                </p>
+
+                <p>
+                    I love spending quality time with you, Zari. I love calling you for hours, even when we spend the whole day together and somehow still find things to talk about. I love playing Roblox with you, playing iMessage games with you, studying with you, laughing with you, and just having your company. I love being around you in every way I can. You and you alone. There is no one else I would rather spend my time with because being with you feels so natural and peaceful.
+                </p>
+
+                <p>
+                    I can’t even explain how grateful I am to have you in my life. I’m so thankful and blessed to have someone who loves me and cares for me the same way I care for you. I’m grateful that I met you, that our paths crossed, and that you became such an important part of my life. Ever since I started talking to you, I’ve felt so much happiness. You brought so much joy into my life without even trying.
+                </p>
+
+                <p>
+                    I love waking up and talking to you. I love falling asleep on the phone with you. I love hearing your voice and knowing there is someone out there who genuinely cares about me. Even when things aren’t easy, you’re someone I feel like I can always come back to. You make me feel safe, and you make me feel loved. You are worth every moment, every wait, and every effort. I would choose you over and over again.
+                </p>
+
+                <p>
+                    You are so incredibly gorgeous, Imani. I genuinely don’t think you understand how beautiful I think you are. I love every little detail about you; your eyes, your smile, your face, your expressions, your voice, your laugh, and everything that makes you you. I could look at you for so long and still never get tired of seeing you.
+                </p>
+
+                <p>
+                    I love your eyes and the way they light up when you’re happy or talking about something you love. I love your smile and how it instantly makes me smile too. I love your laugh and how addicted I am to hearing it. I love the way your face changes when you’re excited, joking, thinking, or just being yourself. I love watching you because even the smallest things you do make me smile.
+                </p>
+
+                <p>
+                    I love everything about you, not just how you look. I love the way you carry yourself, the way you express yourself, and the way you make ordinary moments feel special. You are beautiful inside and out, and sometimes I genuinely find myself feeling so lucky that I get to see you, talk to you, and love you.
+                </p>
+
+                <p>
+                    I’m so in love with you. I don’t just love you because you love me. I love you because you are you. I love your heart, your personality, your kindness, your flaws, your strengths, and everything that makes you Imani. I love the person you are when nobody is watching. I love the way you care, the way you think, and the way you love.
+                </p>
+
+                <p>
+                    One of the biggest things I admire about you is your heart. The way you care for the people around you is one of the most beautiful things about you. I see how much you love and care for Zuri. Even when you’re tired, you’ll still get up and cook for her because that’s just the type of person you are. You naturally take care of the people you love, and that shows how big your heart is.
+                </p>
+
+                <p>
+                    Even when you’re having a bad day, you still somehow find a way to make me smile. You still show up for me, comfort me, and make me feel loved even when you’re dealing with your own things. That means so much to me because it shows how selfless and caring you are.
+                </p>
+
+                <p>
+                    I admire your strength so much too. Even when things upset you or when you’re frustrated, you still handle yourself with so much maturity. You still do what needs to be done, you still push through, and you still keep going even when things aren’t easy. Your determination, your confidence, and your ability to keep moving forward inspire me.
+                </p>
+
+                <p>
+                    I love how talented you are. Your paintings are genuinely beautiful, and I love seeing the creativity and passion you put into them. Your cooking is amazing too, you’re on some Gordon Ramsay shit. Watching you create things and seeing how much effort you put into what you love makes me admire you even more.
+                </p>
+
+                <p>
+                    Another thing I love so much about you is the effort you put into everything you do. You are someone who doesn’t just say you care, you show it through your actions. Whenever you think of something sweet or something that would make someone happy, you actually take the time to do it. You put your heart into the little things, and I notice that.
+                </p>
+
+                <p>
+                    I still think about the little things you’ve made, like the “C” with the heart and the paper flowers. It may seem like something small, but to me it was one of the cutest and most meaningful things ever because it showed how much thought and love you put into it. The time you took, the effort you made, and the fact that you wanted to create something special means so much to me.
+                </p>
+
+                <p>
+                    I really admire the way you can take a simple idea and turn it into something meaningful. Your creativity and thoughtfulness show through in everything you do, and you always find a way to make people feel special. It’s not just about what you create, it’s the love and care behind it that makes it truly beautiful.
+                </p>
+
+                <p>
+                    I love how soft-spoken, patient, and gentle you are with me. You make me feel understood. You make me feel like my feelings matter. I love how peaceful you look when you sleep, with your eyes closed and hugging your teddy. Those little moments make me smile because they remind me how much I adore you.
+                </p>
+
+                <p>
+                    I also want you to know how loved you make me feel, Imani. You have a way of making me feel valued, important, and appreciated. The way you listen to me, understand me, reassure me, and communicate with me makes me feel so safe being myself around you.
+                </p>
+
+                <p>
+                    I love that I never have to question if you care about me because you show me through your actions, your words, and the way you treat me. You make me feel chosen. You make me feel appreciated. You make me feel like I’m someone worth loving.
+                </p>
+
+                <p>
+                    Whenever I’m having a bad day, hearing your voice or talking to you makes things feel lighter. You bring me comfort and happiness without even trying. You’re someone I can laugh with, be vulnerable with, learn with, and just be myself with.
+                </p>
+
+                <p>
+                    Thank you for loving me the way you do. Thank you for being patient with me, reassuring me, choosing me, and making me feel so loved. I hope I can make you feel even half as loved as you make me feel because you deserve that and so much more.
+                </p>
+
+                <p>
+                    I want you to always remember how amazing you are. Your kindness, your patience, your determination, your softness, your strength, and your beautiful soul are just some of the reasons why I love you so much.
+                </p>
+
+                <p class="font-bold text-gray-800">
+                    Happy birthday, my baby. I hope today reminds you of how special you are and how deeply loved you are, not just today, but every single day.
+                </p>
+
+                <p class="font-bold text-pink-600">
+                    I love you so much ❤️
+                </p>
+
             </div>
-            
+
             <div class="text-center">
-                <button onclick="closeModal('modal-letter')" class="bg-rose-400 hover:bg-rose-500 text-white px-6 py-2 rounded-full font-bold shadow">Return</button>
+
+                <button
+                    onclick="closeModal('modal-letter')"
+                    class="bg-rose-400 hover:bg-rose-500 text-white px-6 py-2 rounded-full font-bold shadow">
+                    Return
+                </button>
+
             </div>
+
         </div>
     </div>
 
-    <!-- PAGE 3: FINAL CLOSING SCREEN -->
-    <div id="page-final" class="hidden text-center z-10 max-w-md w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200">
-        <div class="text-6xl mb-4 animate-bounce">💖</div>
-        <h2 class="text-3xl font-bold text-pink-600 mb-4">Happy birthday my love</h2>
-        <p class="text-lg font-semibold text-gray-700 mb-8 leading-relaxed">I’ll always love you ❤️</p>
-        <button onclick="backToHome()" class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-6 rounded-full shadow transition">
+    <!-- ================================
+         PAGE 3 — FINALE
+    ================================= -->
+
+    <div id="page-final"
+         class="hidden page-card text-center z-10 max-w-md w-full bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-200 relative overflow-hidden">
+
+        <div class="final-sparkle sparkle-one">✦</div>
+        <div class="final-sparkle sparkle-two">✧</div>
+        <div class="final-sparkle sparkle-three">✦</div>
+
+        <div class="final-heart"></div>
+
+        <p class="text-xs tracking-[0.3em] uppercase text-pink-400 font-semibold mb-3">
+            For you, always
+        </p>
+
+        <h2 class="romantic-font text-3xl italic font-semibold text-pink-600 mb-4">
+            Happy birthday, my love.
+        </h2>
+
+        <div class="w-16 h-px bg-pink-300 mx-auto mb-5"></div>
+
+        <p class="text-base text-gray-600 leading-relaxed mb-4">
+            I hope this little corner of the internet made you smile.
+        </p>
+
+        <p class="text-sm text-gray-500 leading-relaxed mb-7">
+            No matter how many miles are between us, you will always have a special place in my heart. Thank you for being you, and thank you for letting me love you.
+        </p>
+
+        <p class="romantic-font italic text-pink-500 text-lg mb-7">
+            Here's to you, today and all the days still waiting for us.
+        </p>
+
+        <button
+            onclick="backToHome()"
+            class="bg-rose-400 hover:bg-rose-500 text-white font-bold py-2 px-6 rounded-full shadow transition">
             Back to Home Screen
         </button>
+
     </div>
 
-    <!-- JavaScript Logic -->
+    <!-- ================================
+         JAVASCRIPT
+    ================================= -->
+
     <script>
+
+        /* ================================
+           FALLING PETALS
+        ================================= */
+
         function createFallingPetals() {
-            const container = document.getElementById('petal-container');
-            const petalCount = 15;
+
+            const container =
+                document.getElementById('petal-container');
+
+            const petalCount = 18;
+
             for (let i = 0; i < petalCount; i++) {
-                const petal = document.createElement('div');
+
+                const petal =
+                    document.createElement('div');
+
                 petal.classList.add('falling-petal');
-                
-                const size = Math.random() * 10 + 10;
-                petal.style.width = `${size}px`;
-                petal.style.height = `${size * 1.4}px`;
-                petal.style.left = `${Math.random() * 100}vw`;
-                
-                const duration = Math.random() * 6 + 4;
-                const delay = Math.random() * 5;
-                petal.style.animationDuration = `${duration}s`;
-                petal.style.animationDelay = `${delay}s`;
-                
+
+                const size =
+                    Math.random() * 10 + 9;
+
+                petal.style.width =
+                    `${size}px`;
+
+                petal.style.height =
+                    `${size * 1.4}px`;
+
+                petal.style.left =
+                    `${Math.random() * 100}vw`;
+
+                const duration =
+                    Math.random() * 6 + 5;
+
+                const delay =
+                    Math.random() * 7;
+
+                petal.style.animationDuration =
+                    `${duration}s`;
+
+                petal.style.animationDelay =
+                    `${delay}s`;
+
                 container.appendChild(petal);
             }
         }
+
         createFallingPetals();
 
+
+        /* ================================
+           NO BUTTON
+        ================================= */
+
         function moveNoButton() {
-            const btn = document.getElementById('no-btn');
-            const randomX = Math.random() * 150 - 75;
-            const randomY = Math.random() * 100 - 50;
-            btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+            const btn =
+                document.getElementById('no-btn');
+
+            const randomX =
+                Math.random() * 150 - 75;
+
+            const randomY =
+                Math.random() * 100 - 50;
+
+            btn.style.transform =
+                `translate(${randomX}px, ${randomY}px)`;
         }
+
 
         function noClicked() {
-            document.getElementById('error-modal').classList.remove('hidden');
+
+            document
+                .getElementById('error-modal')
+                .classList.remove('hidden');
         }
+
 
         function closeError() {
-            document.getElementById('error-modal').classList.add('hidden');
+
+            document
+                .getElementById('error-modal')
+                .classList.add('hidden');
         }
+
+
+        /* ================================
+           PAGE NAVIGATION
+        ================================= */
 
         function goToDashboard() {
-            document.getElementById('page-welcome').classList.add('hidden');
-            document.getElementById('page-dashboard').classList.remove('hidden');
+
+            document
+                .getElementById('page-welcome')
+                .classList.add('hidden');
+
+            document
+                .getElementById('page-dashboard')
+                .classList.remove('hidden');
+
+            window.scrollTo(0, 0);
         }
+
 
         function showFinalScreen() {
-            document.getElementById('page-dashboard').classList.add('hidden');
-            document.getElementById('page-final').classList.remove('hidden');
+
+            document
+                .getElementById('page-dashboard')
+                .classList.add('hidden');
+
+            document
+                .getElementById('page-final')
+                .classList.remove('hidden');
+
+            window.scrollTo(0, 0);
         }
+
 
         function backToHome() {
-            document.getElementById('page-final').classList.add('hidden');
-            document.getElementById('page-welcome').classList.remove('hidden');
+
+            document
+                .getElementById('page-final')
+                .classList.add('hidden');
+
+            document
+                .getElementById('page-welcome')
+                .classList.remove('hidden');
+
+            window.scrollTo(0, 0);
         }
+
+
+        /* ================================
+           MODALS
+        ================================= */
 
         function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
+
+            document
+                .getElementById(modalId)
+                .classList.remove('hidden');
         }
+
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
+
+            document
+                .getElementById(modalId)
+                .classList.add('hidden');
         }
+
+
+        /* ================================
+           MICROPHONE / CAKE
+        ================================= */
 
         async function startMic() {
-            const btn = document.getElementById('mic-btn');
-            const instructions = document.getElementById('cake-instructions');
-            
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                const analyser = audioContext.createAnalyser();
-                const microphone = audioContext.createMediaStreamSource(stream);
-                microphone.connect(analyser);
-                analyser.fftSize = 256;
-                const bufferLength = analyser.frequencyBinCount;
-                const dataArray = new Uint8Array(bufferLength);
 
-                btn.innerText = "Listening... Blow into mic! 💨";
+            const btn =
+                document.getElementById('mic-btn');
+
+            const instructions =
+                document.getElementById('cake-instructions');
+
+            try {
+
+                const stream =
+                    await navigator.mediaDevices.getUserMedia({
+                        audio: true,
+                        video: false
+                    });
+
+                const AudioContext =
+                    window.AudioContext ||
+                    window.webkitAudioContext;
+
+                const audioContext =
+                    new AudioContext();
+
+                const analyser =
+                    audioContext.createAnalyser();
+
+                const microphone =
+                    audioContext.createMediaStreamSource(stream);
+
+                microphone.connect(analyser);
+
+                analyser.fftSize = 256;
+
+                const bufferLength =
+                    analyser.frequencyBinCount;
+
+                const dataArray =
+                    new Uint8Array(bufferLength);
+
+                btn.innerText =
+                    "Listening... Blow! 💨";
+
                 btn.disabled = true;
-                instructions.innerText = "Blow hard now!";
+
+                instructions.innerText =
+                    "Blow toward your microphone!";
+
 
                 function checkVolume() {
-                    analyser.getByteFrequencyData(dataArray);
+
+                    analyser.getByteFrequencyData(
+                        dataArray
+                    );
+
                     let sum = 0;
-                    for (let i = 0; i < bufferLength; i++) {
+
+                    for (
+                        let i = 0;
+                        i < bufferLength;
+                        i++
+                    ) {
+
                         sum += dataArray[i];
                     }
-                    let average = sum / bufferLength;
+
+                    const average =
+                        sum / bufferLength;
+
 
                     if (average > 30) {
-                        document.getElementById('flame-1').style.display = 'none';
-                        document.getElementById('flame-2').style.display = 'none';
-                        document.getElementById('flame-3').style.display = 'none';
-                        
-                        document.getElementById('cake-message').classList.remove('hidden');
-                        instructions.innerText = "Yay! Candles blown out! 🎉";
-                        btn.innerText = "Success! ❤️";
-                        
-                        stream.getTracks().forEach(track => track.stop());
+
+                        blowOutCandles(
+                            stream,
+                            audioContext
+                        );
+
                         return;
                     }
-                    requestAnimationFrame(checkVolume);
+
+                    requestAnimationFrame(
+                        checkVolume
+                    );
                 }
+
                 checkVolume();
+
             } catch (err) {
-                alert("Mic access was blocked or isn't supported on this browser. Tapping the button will blow them out instead!");
-                document.getElementById('flame-1').style.display = 'none';
-                document.getElementById('flame-2').style.display = 'none';
-                document.getElementById('flame-3').style.display = 'none';
-                document.getElementById('cake-message').classList.remove('hidden');
-                instructions.innerText = "Yay! Candles blown out! 🎉";
-                btn.innerText = "Success! ❤️";
+
+                /* If microphone access doesn't work,
+                   let the button still function. */
+
+                blowOutCandles();
+
             }
         }
+
+
+        function blowOutCandles(
+            stream = null,
+            audioContext = null
+        ) {
+
+            document
+                .getElementById('flame-1')
+                .style.display = 'none';
+
+            document
+                .getElementById('flame-2')
+                .style.display = 'none';
+
+            document
+                .getElementById('flame-3')
+                .style.display = 'none';
+
+
+            document
+                .getElementById('cake-message')
+                .classList.remove('hidden');
+
+
+            document
+                .getElementById('cake-instructions')
+                .innerText =
+                "The candles are out. Make your wish. ✨";
+
+
+            document
+                .getElementById('mic-btn')
+                .innerText =
+                "Wish made ✨";
+
+
+            document
+                .getElementById('mic-btn')
+                .disabled = true;
+
+
+            if (stream) {
+
+                stream
+                    .getTracks()
+                    .forEach(track => track.stop());
+            }
+
+
+            if (audioContext) {
+
+                audioContext.close();
+            }
+        }
+
     </script>
+
 </body>
 </html>
