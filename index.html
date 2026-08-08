@@ -142,7 +142,7 @@
         </div>
     </div>
 
-    <!-- MODAL 2: VIRTUAL CAKE IMAGE WITH FLAMES ON TOP -->
+    <!-- MODAL 2: VIRTUAL CAKE IMAGE CLEAN -->
     <div id="modal-cake" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div class="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl text-center border border-pink-100 relative">
             <h3 class="text-lg font-bold text-pink-600 mb-1">Blow Out The Candles 🎂</h3>
@@ -151,11 +151,8 @@
             <div class="relative w-52 h-52 mx-auto flex items-center justify-center mb-4">
                 <img src="cake.jpeg" alt="Birthday Cake" class="max-h-full max-w-full object-contain rounded-2xl shadow-md border-2 border-pink-200">
                 
-                <!-- Moving flames aligned over the cake image candles -->
-                <div class="absolute top-12 left-0 right-0 flex justify-center gap-12 pointer-events-none">
-                    <div id="flame-1" class="w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    <div id="flame-2" class="w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                </div>
+                <!-- Single elegant glowing flame right above the cake -->
+                <div id="flame-single" class="absolute top-6 w-4 h-6 bg-amber-400 rounded-full candle-flame shadow-md"></div>
             </div>
 
             <div id="cake-message" class="hidden mb-4 p-3 bg-pink-50 rounded-2xl border border-pink-200">
@@ -316,8 +313,7 @@
                     let average = sum / bufferLength;
 
                     if (average > 30) {
-                        document.getElementById('flame-1').style.display = 'none';
-                        document.getElementById('flame-2').style.display = 'none';
+                        document.getElementById('flame-single').style.display = 'none';
                         
                         document.getElementById('cake-message').classList.remove('hidden');
                         instructions.innerText = "Yay! Candles blown out! 🎉";
@@ -331,8 +327,7 @@
                 checkVolume();
             } catch (err) {
                 alert("Mic access was blocked or isn't supported on this browser. Tapping the button will blow them out instead!");
-                document.getElementById('flame-1').style.display = 'none';
-                document.getElementById('flame-2').style.display = 'none';
+                document.getElementById('flame-single').style.display = 'none';
                 document.getElementById('cake-message').classList.remove('hidden');
                 instructions.innerText = "Yay! Candles blown out! 🎉";
                 btn.innerText = "Success! ❤️";
