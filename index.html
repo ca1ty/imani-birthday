@@ -35,7 +35,7 @@
         /* Flame flicker effect */
         @keyframes flicker {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(0.95) translateY(2px); opacity: 0.85; }
+            50% { transform: scale(0.9) translateY(1px); opacity: 0.85; }
         }
         .candle-flame { animation: flicker 0.6s infinite; }
     </style>
@@ -142,26 +142,19 @@
         </div>
     </div>
 
-    <!-- MODAL 2: VIRTUAL CAKE IMAGE & MIC BLOW OUT -->
+    <!-- MODAL 2: VIRTUAL CAKE IMAGE WITH FLAMES ON TOP -->
     <div id="modal-cake" class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
         <div class="bg-white rounded-3xl p-6 max-w-sm w-full shadow-2xl text-center border border-pink-100 relative">
             <h3 class="text-lg font-bold text-pink-600 mb-1">Blow Out The Candles 🎂</h3>
             <p id="cake-instructions" class="text-xs text-gray-500 mb-3">Click below to allow mic access, then blow into your mic!</p>
             
-            <div class="relative w-48 h-48 mx-auto flex items-center justify-center mb-4">
+            <div class="relative w-52 h-52 mx-auto flex items-center justify-center mb-4">
                 <img src="cake.jpeg" alt="Birthday Cake" class="max-h-full max-w-full object-contain rounded-2xl shadow-md border-2 border-pink-200">
                 
-                <!-- Candles / Flames positioned over the cake image -->
-                <div class="absolute top-2 flex justify-center gap-6 w-full">
-                    <div class="w-2 h-7 bg-red-500 rounded relative flex justify-center shadow">
-                        <div id="flame-1" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
-                    <div class="w-2 h-7 bg-red-500 rounded relative flex justify-center shadow">
-                        <div id="flame-2" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
-                    <div class="w-2 h-7 bg-red-500 rounded relative flex justify-center shadow">
-                        <div id="flame-3" class="absolute -top-3.5 w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
-                    </div>
+                <!-- Moving flames aligned over the cake image candles -->
+                <div class="absolute top-12 left-0 right-0 flex justify-center gap-12 pointer-events-none">
+                    <div id="flame-1" class="w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
+                    <div id="flame-2" class="w-3.5 h-5 bg-amber-400 rounded-full candle-flame shadow-md"></div>
                 </div>
             </div>
 
@@ -325,7 +318,6 @@
                     if (average > 30) {
                         document.getElementById('flame-1').style.display = 'none';
                         document.getElementById('flame-2').style.display = 'none';
-                        document.getElementById('flame-3').style.display = 'none';
                         
                         document.getElementById('cake-message').classList.remove('hidden');
                         instructions.innerText = "Yay! Candles blown out! 🎉";
@@ -341,7 +333,6 @@
                 alert("Mic access was blocked or isn't supported on this browser. Tapping the button will blow them out instead!");
                 document.getElementById('flame-1').style.display = 'none';
                 document.getElementById('flame-2').style.display = 'none';
-                document.getElementById('flame-3').style.display = 'none';
                 document.getElementById('cake-message').classList.remove('hidden');
                 instructions.innerText = "Yay! Candles blown out! 🎉";
                 btn.innerText = "Success! ❤️";
